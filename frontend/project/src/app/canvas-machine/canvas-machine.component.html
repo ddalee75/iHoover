@@ -1,0 +1,35 @@
+<div class="global">
+   
+    <div class="superposer">
+        <canvas #canvas width="500" height="500">
+            Your navigator does not support Canvas
+        </canvas>
+        <div class="grille"></div>
+    </div><!--fin de div superposer-->
+    
+    <div class="env_input">
+        <div class="env_btn">
+            <div class="btn_left" (click)="turnLeft()">G</div>
+            <div class="btn_move" (click)="clickMove()">A</div>
+            <div class="btn_right" (click)="turnRight()">D</div>
+        </div><!--fin env_btn-->
+        
+        <input type="text" [(ngModel)]="instruction">
+        <button (click)="start()">Start</button>
+        <a href="http://localhost:8082"><button>Reset</button></a>
+    </div><!--fin env_input-->    
+
+    <div class="note">
+       <b> G = Turn left, A = Move, D = Turn right <br></b>
+        Input your commandes and
+        click "Start" to start <br>
+        (In uppercase please.) 
+    </div><!--fin de div note-->
+
+    <div class="position">
+        Your vaccum cleaner is now at [x:{{this.machine.x}}, y:{{this.machine.y}}], at block [{{this.grilleX}}, {{this.grilleY}}]
+    </div>
+   
+    <app-alert *ngIf="this.showMessage==true" [message]="this.message" (showMessageEvent)="receiveShowMessageEvent($event)"></app-alert>    
+
+</div><!--fin div global-->

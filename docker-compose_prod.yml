@@ -1,0 +1,14 @@
+version: '3.9'
+
+services:
+  frontend:
+    container_name: frontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    image: frontend
+    restart: always
+    ports:
+      - 8082:80
+    volumes:
+      - ./frontend/project:/usr/src/app
