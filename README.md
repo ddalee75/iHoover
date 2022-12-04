@@ -1,4 +1,4 @@
-# iHoover<br>
+# iHoover :)<br>
 
 Git clone le dossier puis lancer <br><br>
 docker-compose up --build<br><br>
